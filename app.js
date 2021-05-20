@@ -49,25 +49,41 @@
 
 // Spread operator & Rest parameter
 
-const numberArray = [1, 2, 3, 4, 5];
+// const numberArray = [1, 2, 3, 4, 5];
 
-function sum(ten, ...numbers) {
-  const total = numbers.reduce((accumulator, currernValue) => {
-    return accumulator + currernValue;
-  });
+// function sum(ten, ...numbers) {
+//   const total = numbers.reduce((accumulator, currernValue) => {
+//     return accumulator + currernValue;
+//   });
 
-  console.log(total * ten);
+//   console.log(total * ten);
+// }
+// sum(10, 2, 3, 4, 5, 6);
+
+// function sum1(...num) {
+//   console.log(num);
+//   return num.reduce((acc, curr) => acc + curr);
+// }
+// console.log(sum1(...numberArray));
+
+// const array = ['A', 'B', 'C', 'D'];
+
+// const [first, second, ...rest] = array;
+
+// console.log(first, second, rest);
+
+// Null coalescing
+
+function greet(first, last) {
+  // if null or undefined then it will show the right, otherwase not.
+  last = last ?? 'Dude';
+  console.log(first, last);
 }
-sum(10, 2, 3, 4, 5, 6);
 
-function sum1(...num) {
-  console.log(num);
-  return num.reduce((acc, curr) => acc + curr);
-}
-console.log(sum1(...numberArray));
+greet('Hey', undefined);
 
-const array = ['A', 'B', 'C', 'D'];
+// true || false -> true
+// false || true -> true
+// falsy || falsy -> right-side falsy
 
-const [first, second, ...rest] = array;
-
-console.log(first, second, rest);
+console.log((undefined ?? 'Hey') && (false || true));
