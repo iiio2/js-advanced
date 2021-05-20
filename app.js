@@ -74,16 +74,33 @@
 
 // Null coalescing
 
-function greet(first, last) {
-  // if null or undefined then it will show the right, otherwase not.
-  last = last ?? 'Dude';
-  console.log(first, last);
+// function greet(first, last) {
+//   // if null or undefined then it will show the right, otherwase not.
+//   last = last ?? 'Dude';
+//   console.log(first, last);
+// }
+
+// greet('Hey', undefined);
+
+// // true || false -> true
+// // false || true -> true
+// // falsy || falsy -> right-side falsy
+
+// console.log((undefined ?? 'Hey') && (false || true));
+
+// Optional Chaining ( " ?." )
+
+const kyle = {
+  name: 'Kyle',
+  age: 25,
+  // address: {
+  //   street: '123 Main St',
+  // },
+};
+
+function printStreet(person) {
+  const result = person?.address?.street;
+  console.log(result);
 }
 
-greet('Hey', undefined);
-
-// true || false -> true
-// false || true -> true
-// falsy || falsy -> right-side falsy
-
-console.log((undefined ?? 'Hey') && (false || true));
+printStreet(kyle);
