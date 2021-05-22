@@ -90,17 +90,13 @@
 
 // Optional Chaining ( " ?." )
 
-const kyle = {
-  name: 'Kyle',
-  age: 25,
-  // address: {
-  //   street: '123 Main St',
-  // },
-};
+// Map
 
-function printStreet(person) {
-  const result = person?.address?.street;
-  console.log(result);
-}
+const map = new Map([
+  [1, 'A'],
+  [2, 'B'],
+  [3, 'C'],
+  [4, 'D'],
+]);
 
-printStreet(kyle);
+console.log(map);
